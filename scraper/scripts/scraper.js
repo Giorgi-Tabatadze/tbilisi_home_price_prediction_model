@@ -4,7 +4,7 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const axios = require('axios'); 
 
 const csvWriter = createCsvWriter({
-  path: './data/housing_data.csv',
+  path: "../../data/housing_data.csv",
   header: [    
       {id: 'id', title: 'ID'},
       {id: 'url', title: 'URL'},
@@ -91,7 +91,7 @@ async function myhomegeScraper(id, npages, url) {
         if (apartment.imageurl) {
           const imageName = apartment.id;
           try {
-            await downloadImage(apartment.imageurl, `./data/images/${imageName}`);
+            await downloadImage(apartment.imageurl, `../../data/images/${imageName}`);
           } catch (error) {
             if (error.response && error.response.status === 404) {
               console.warn(`Image not found at URL: ${apartment.imageurl}`);
@@ -114,7 +114,7 @@ async function myhomegeScraper(id, npages, url) {
       );
 
       // Wait for 5-10 seconds before loading the next page
-      await page.waitForTimeout(10000);
+      await page.waitForNavigation();
     }
 
     await browser.close();
@@ -125,4 +125,4 @@ async function myhomegeScraper(id, npages, url) {
 
 }
 
-myhomegeScraper(0, 224, "https://www.myhome.ge/ka/s/iyideba-bina-Tbilisi?Keyword=%E1%83%97%E1%83%91%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1%E1%83%98&AdTypeID=1&PrTypeID=1&Page=1&mapC=41.73188365%2C44.8368762993663&cities=1996871&GID=1996871&OwnerTypeID=1")
+myhomegeScraper(23905, 2200, "https://www.myhome.ge/ka/s/iyideba-bina-Tbilisi?Keyword=თბილისი&AdTypeID=1&PrTypeID=1&Page=1053&mapC=41.73188365%2C44.8368762993663&cities=1996871&GID=1996871&FCurrencyID=1&FPriceFrom=10000&WithPhoto=1")
