@@ -125,4 +125,4 @@ async function myhomegeScraper(id, npages, url) {
 
 }
 
-myhomegeScraper(45602, 1000, "https://www.myhome.ge/ka/s/iyideba-bina-Tbilisi?Keyword=თბილისი&AdTypeID=1&PrTypeID=1&Page=2080&mapC=41.73188365%2C44.8368762993663&cities=1996871&GID=1996871&FCurrencyID=1&FPriceFrom=10000&WithPhoto=1")
+myhomegeScraper(0, 220, "https://www.myhome.ge/ka/s/iyideba-bina-Tbilisi?Keyword=%E1%83%97%E1%83%91%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1%E1%83%98&AdTypeID=1&PrTypeID=1&mapC=41.73188365%2C44.8368762993663&cities=1996871&GID=1996871&FCurrencyID=1&FPriceFrom=5000&OwnerTypeID=1")
